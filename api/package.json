@@ -7,7 +7,8 @@
     "deploy": "wrangler deploy",
     "typecheck": "tsc",
     "migrate:local": "wrangler d1 migrations apply request-tracker --local",
-    "migrate:remote": "wrangler d1 migrations apply request-tracker --remote"
+    "migrate:remote": "wrangler d1 migrations apply request-tracker --remote",
+    "dev:offline": "wrangler dev --env offline"
   },
   "type": "module",
   "dependencies": {

@@ -30,7 +30,7 @@ export function NewRequestForm({ requester, onCreated }: Props) {
     try {
       const t = await api.triage(title, description);
       setSuggestion(t);
-      setSummary(t.summary);
+      setSummary(t.ai_available ? t.summary : "");
       setCategory(t.ai_available ? t.suggested_category : "");
       if (!t.ai_available) setError("AI suggestion unavailable. Pick a category yourself.");
     } catch {

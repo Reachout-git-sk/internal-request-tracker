@@ -22,5 +22,25 @@
     "AI_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
     // comma separated; add the Pages URL after the first deploy
     "ALLOWED_ORIGINS": "http://localhost:5173"
+  },
+
+  "env": {
+    // `wrangler dev --env offline`: no Cloudflare login needed. Bindings are not
+    // inherited by environments, so there is no AI binding and triage falls back
+    // to manual category selection.
+    "offline": {
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "request-tracker",
+          "database_id": "00000000-0000-0000-0000-000000000000",
+          "migrations_dir": "migrations"
+        }
+      ],
+      "vars": {
+        "AI_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+        "ALLOWED_ORIGINS": "http://localhost:5173"
+      }
+    }
   }
 }
