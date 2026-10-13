@@ -1,0 +1,121 @@
+{
+  "cases": [
+    {
+      "expected": "it_access",
+      "got": "it_access",
+      "ok": true,
+      "ms": 732,
+      "ai": true,
+      "summary": "VPN password expired"
+    },
+    {
+      "expected": "it_access",
+      "got": "it_access",
+      "ok": true,
+      "ms": 1039,
+      "ai": true,
+      "summary": "Needs access to finance shared drive"
+    },
+    {
+      "expected": "hardware",
+      "got": "hardware",
+      "ok": true,
+      "ms": 1781,
+      "ai": true,
+      "summary": "Laptop screen flickers"
+    },
+    {
+      "expected": "hardware",
+      "got": "hardware",
+      "ok": true,
+      "ms": 1284,
+      "ai": true,
+      "summary": "New hire needs monitor and dock"
+    },
+    {
+      "expected": "software",
+      "got": "software",
+      "ok": true,
+      "ms": 1204,
+      "ai": true,
+      "summary": "Excel crashes with pivot tables"
+    },
+    {
+      "expected": "software",
+      "got": "software",
+      "ok": true,
+      "ms": 1107,
+      "ai": true,
+      "summary": "Needs Tableau licence and install"
+    },
+    {
+      "expected": "facilities",
+      "got": "facilities",
+      "ok": true,
+      "ms": 1276,
+      "ai": true,
+      "summary": "Fix broken AC"
+    },
+    {
+      "expected": "facilities",
+      "got": "facilities",
+      "ok": true,
+      "ms": 1160,
+      "ai": true,
+      "summary": "Needs parking permit"
+    },
+    {
+      "expected": "hr",
+      "got": "hr",
+      "ok": true,
+      "ms": 2030,
+      "ai": true,
+      "summary": "Parental leave eligibility"
+    },
+    {
+      "expected": "hr",
+      "got": "hr",
+      "ok": true,
+      "ms": 1601,
+      "ai": true,
+      "summary": "Add spouse to health insurance"
+    },
+    {
+      "expected": "finance",
+      "got": "finance",
+      "ok": true,
+      "ms": 1067,
+      "ai": true,
+      "summary": "Expense report was rejected"
+    },
+    {
+      "expected": "finance",
+      "got": "finance",
+      "ok": true,
+      "ms": 1431,
+      "ai": true,
+      "summary": "Unpaid vendor invoice"
+    },
+    {
+      "expected": "other",
+      "got": "other",
+      "ok": true,
+      "ms": 973,
+      "ai": true,
+      "summary": "Team lunch idea"
+    },
+    {
+      "expected": "other",
+      "got": "other",
+      "ok": true,
+      "ms": 1204,
+      "ai": true,
+      "summary": "Contact for newsletter submission"
+    }
+  ],
+  "correct": 14,
+  "total": 14,
+  "p50_ms": 1204,
+  "max_ms": 2030,
+  "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+}
