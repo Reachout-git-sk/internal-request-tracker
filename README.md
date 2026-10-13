@@ -5,7 +5,23 @@ IT, facilities, HR and finance requests, and Workers AI drafts a one-line summar
 and suggests a category. **A person reviews the suggestion and confirms before
 anything is saved.** Every change after that is recorded in an audit trail.
 
-![Request Tracker](docs/screenshot.png)
+**Live:** frontend at https://request-tracker-dwi.pages.dev, API at
+https://request-tracker-api.request-tracker-api.workers.dev (deployed 2026-10-13).
+
+![Request Tracker running on Cloudflare Pages](docs/live-app.png)
+
+## Live results
+
+Measured against the deployed Worker on 2026-10-13 (`docs/live-triage-results.json`):
+
+- **Workers AI triage:** 14 hand-written sample requests, 2 per category. The model
+  picked the expected category for **14/14**. Latency for `POST /api/triage` measured from
+  the client was **p50 1.2 s, max 2.0 s**. This is a small smoke test, not a benchmark.
+- **End to end:** triage, then create, then PATCH status and assignee, all against the
+  remote D1 database. The audit event and the AI provenance fields were stored, and
+  `/api/stats` reported the suggested category as kept.
+- **CORS:** a preflight from the Pages origin gets `Access-Control-Allow-Origin`. A
+  request from any other origin gets no CORS header.
 
 | Layer | Tech |
 |---|---|
@@ -123,6 +139,10 @@ frontend to Pages. To enable it, add these in the GitHub repo settings:
 
 - secrets `CLOUDFLARE_API_TOKEN` (Workers, D1, Pages and Workers AI edit permissions) and `CLOUDFLARE_ACCOUNT_ID`
 - variables `DEPLOY_ENABLED=true` and `API_URL=https://request-tracker-api.<you>.workers.dev`
+
+`CLOUDFLARE_ACCOUNT_ID` and `API_URL` are set on this repo. The deploy job stays off
+until `CLOUDFLARE_API_TOKEN` and `DEPLOY_ENABLED=true` are added. The live deployment
+above was made with the same Wrangler commands, run by hand.
 
 ## Production notes
 
