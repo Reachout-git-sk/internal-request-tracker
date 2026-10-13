@@ -10,8 +10,7 @@
     {
       "binding": "DB",
       "database_name": "request-tracker",
-      // replace with the id printed by `npx wrangler d1 create request-tracker`
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "f2c93580-7af6-440c-8498-b9b607494fdf",
       "migrations_dir": "migrations"
     }
   ],
@@ -20,8 +19,8 @@
 
   "vars": {
     "AI_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-    // comma separated; add the Pages URL after the first deploy
-    "ALLOWED_ORIGINS": "http://localhost:5173"
+    // comma separated
+    "ALLOWED_ORIGINS": "http://localhost:5173,https://request-tracker-dwi.pages.dev"
   },
 
   "env": {
