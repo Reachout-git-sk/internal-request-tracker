@@ -140,9 +140,9 @@ frontend to Pages. To enable it, add these in the GitHub repo settings:
 - secrets `CLOUDFLARE_API_TOKEN` (Workers, D1, Pages and Workers AI edit permissions) and `CLOUDFLARE_ACCOUNT_ID`
 - variables `DEPLOY_ENABLED=true` and `API_URL=https://request-tracker-api.<you>.workers.dev`
 
-`CLOUDFLARE_ACCOUNT_ID` and `API_URL` are set on this repo. The deploy job stays off
-until `CLOUDFLARE_API_TOKEN` and `DEPLOY_ENABLED=true` are added. The live deployment
-above was made with the same Wrangler commands, run by hand.
+All four are set on this repo, and the deploy job is live. The first CI deploy ran on
+2026-10-13: D1 migrations were checked and none were pending, then the Worker was
+deployed and the Pages build published.
 
 ## Production notes
 
